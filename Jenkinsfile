@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('proje_kopyalama') {
             steps {
+                sh 'rm -rf jenkins_example'
                 sh 'git clone https://github.com/leylameram/jenkins_example.git'
             }
         }
