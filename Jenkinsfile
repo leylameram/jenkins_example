@@ -1,9 +1,15 @@
 pipeline {
-    agent { docker { image 'python:3.10.7-alpine' } }
+    agent any
     stages {
-        stage('build') {
+        stage('proje_kopyalama') {
             steps {
-                sh 'python --version'
+                sh 'git clone https://github.com/leylameram/jenkins_example.git'
+            }
+        }
+        stage('projeyi_calistir') {
+            steps {
+                sh 'python3 project.py'
+                sh 'python3 project1.py'
             }
         }
     }
